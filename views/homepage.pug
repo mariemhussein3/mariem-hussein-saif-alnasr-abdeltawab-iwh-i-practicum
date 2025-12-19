@@ -1,12 +1,62 @@
-table(border="1")
-  tr
-    th ID
-    th Name
-    th Type
-    th Date
-  each record in records
-    tr
-      td= record.id
-      td= record.properties.pet_name
-      td= record.properties.pet_type
-      td= record.properties.date
+doctype html
+html
+  head
+    title= title
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        background: #212020ff ;
+        margin: 0;
+        padding: 40px;
+      }
+      h1 {
+        text-align: center;
+        color: white;
+      }
+      a {
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 10px 16px;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+      }
+      table {
+        width: 100%;
+        background: #212020ff;
+        border-collapse: collapse;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+      th {
+        background: rgba(33, 33, 33, 0.26);
+        color: white;
+        padding: 12px;
+        text-align: left;
+        color:white;
+      }
+      td {
+        padding: 12px;
+        border-bottom: 1px solid gray;
+        color:white;
+      }
+    
+
+  body
+    h1= title
+    a(href="/update-cobj") + Add New Record
+
+    table
+      tr
+        th ID
+        th Name
+        th Type
+        th Avg Price
+
+      each record in records
+        tr
+          td= record.id
+          td= record.properties.name
+          td= record.properties.type
+          td= record.properties.avg_price

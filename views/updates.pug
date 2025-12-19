@@ -2,21 +2,72 @@ doctype html
 html
   head
     title= title
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        background: #212020ff;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .card {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        width: 350px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+      button {
+        width: 100%;
+        padding: 12px;
+        background: #1a1919ff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #242424ff;
+      }
+      a {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+        color: #000;
+        text-decoration: none;
+      }
+
   body
-    h1= title
-    form(action="/update-cobj", method="POST")
-      label(for="name") Name:
-      input(type="text", name="name", required)
-      br
+    .card
+      h1= title
+      form(action="/update-cobj" method="POST")
+        label Name
+        input(type="text" name="name" required)
 
-      label(for="breed") Breed:
-      input(type="text", name="breed", required)
-      br
-      
-      label(for="date") Date:
-      input(type="date", name="date", required)
-      br
+        label Type
+        input(type="text" name="type" required)
 
-      button(type="submit") Add Record
-      br
-      a(href="/") Return to the homepage
+        label Avg Price
+        input(type="number" name="avg_price" required)
+
+        button(type="submit") Save Record
+
+      a(href="/") ← Back to Home
